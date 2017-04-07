@@ -119,9 +119,11 @@ class MessageManager(telepot.helper.ChatHandler):
 		chat_id = msg['chat']['id']
 		name_file = 'hashtags' + str(chat_id) + '.json'
 		file_path = os.path.join('hashtags', name_file)
-		if not os.path.isfile(file_path):
-			with open(file_path, 'w') as file:
-				file.write('{}')
+		if not os.path.exists('hashtags'):
+			os.makedirs('hashtags')
+			if not os.path.isfile(file_path):
+				with open(file_path, 'w') as file:
+					file.write('{}')
 
 		return file_path
 
