@@ -1,0 +1,3 @@
+show - show all hashtags
+add - add hashtag <TAG> <HASHTAG>
+delete - delete hashtag <HASHTAG>
